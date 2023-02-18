@@ -1,0 +1,25 @@
+class Bank:
+    def __init__(self, name, money):
+        self.name = name
+        self.money = money
+
+    @property
+    def gotmoney(self):
+        return self.name + ' получил ' + self.money + ' тысячи'
+
+    @gotmoney.setter
+    def gotmoney(self, sentence):
+        name, rand, money = sentence.split(' ')
+        self.name = name
+        self.money = money
+
+
+a = Bank("Иван", "33.000")
+print(a.name)
+print(a.gotmoney)
+a.name = "Женя"
+print(a.name)
+print(a.gotmoney)
+a.gotmoney = 'Василий получил 28.000'
+print(a.name)
+print(a.gotmoney)
